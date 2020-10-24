@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "igniteprodaks-5557"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "igniteprodaks-5557"
+  template:
+    metadata:
+      labels:
+        app: "igniteprodaks-5557"
+    spec:
+      containers:
+        - name: "igniteprodaks-5557"
+          image: "actionregistry.azurecr.io/igniteprodaks5557"
+          ports:
+          - containerPort: 8080

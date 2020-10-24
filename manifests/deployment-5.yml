@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "actionsdemoaks-bc15"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "actionsdemoaks-bc15"
+  template:
+    metadata:
+      labels:
+        app: "actionsdemoaks-bc15"
+    spec:
+      containers:
+        - name: "actionsdemoaks-bc15"
+          image: "acrd62kd5oifovc2.azurecr.io/actionsdemoaks"
+          ports:
+          - containerPort: 8080
